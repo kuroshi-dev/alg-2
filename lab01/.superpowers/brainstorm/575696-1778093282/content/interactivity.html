@@ -1,0 +1,30 @@
+<h2>Як працює анімація алгоритму?</h2>
+<p class="subtitle">Вибери режим відображення кроків</p>
+
+<div class="options">
+
+  <div class="option" data-choice="a" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>Покроково — кнопка «Далі»</h3>
+      <p>Натискаєш «Наступний крок» — на графі підсвічується нове ребро, список кроків оновлюється. Можна також «Назад». Повний контроль.</p>
+    </div>
+  </div>
+
+  <div class="option" data-choice="b" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>Автопрогравання з паузою</h3>
+      <p>Кнопка «Запустити» — кроки програються автоматично з затримкою ~1 сек. Є пауза і перемотка до початку.</p>
+    </div>
+  </div>
+
+  <div class="option" data-choice="c" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>Статично — одразу весь результат</h3>
+      <p>Сторінка одразу показує фінальний MST: виділені ребра на графі, список кроків, підсумкова вага. Без анімації.</p>
+    </div>
+  </div>
+
+</div>
