@@ -13,12 +13,15 @@ graph.addEdge(4, 5, 2);
 graph.addEdge(4, 6, 14);
 graph.addEdge(5, 6, 10);
 
-console.log("=== Матриця суміжності ===");
+console.log("граф: 6 вершин, варіант 3");
+console.log("---\n");
+
+console.log("матриця суміжності:");
 graph.printMatrix();
 
-console.log("\n=== Виконання алгоритму Дейкстри (від вершини 1 до вершини 6) ===\n");
+console.log("\nDijkstra 1 -> 6:\n");
 const result = dijkstra(graph, 1, 6);
 
-console.log("\n=== Результат ===");
-console.log(`Найкоротший шлях: ${result.path.join(" → ")}`);
-console.log(`Довжина шляху:    ${result.distance}`);
+console.log("\n---");
+console.log(`шлях: ${result.path.join(" -> ")}`);
+console.log(`довжина = ${result.distance}`);

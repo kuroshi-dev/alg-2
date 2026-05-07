@@ -35,3 +35,4 @@ docs/
 *.docx
 *.md
 ЗВІТ-*.docx
+.claudeignore

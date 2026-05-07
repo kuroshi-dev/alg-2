@@ -14,14 +14,17 @@ graph.addEdge(4, 5, 2);
 graph.addEdge(4, 6, 14);
 graph.addEdge(5, 6, 10);
 
-console.log("=== Матриця суміжності ===");
+console.log("граф: 6 вершин, варіант 3");
+console.log("---\n");
+
+console.log("матриця суміжності:");
 graph.printMatrix();
 
-console.log("\n=== Виконання алгоритму Прима-Крускала ===");
+console.log("\nPrim-Kruskal:");
 const result = primKruskal(graph);
 
-console.log("\n=== Мінімальне каркасне дерево ===");
+console.log("\n---");
 for (const edge of result.edges) {
-  console.log(`  (${edge.from}, ${edge.to})  вага: ${edge.weight}`);
+  console.log(`  (${edge.from}, ${edge.to})  w=${edge.weight}`);
 }
-console.log(`\nСумарна вага: ${result.totalWeight}`);
+console.log(`\nвага = ${result.totalWeight}`);
