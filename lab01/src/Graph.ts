@@ -15,7 +15,7 @@ export class Graph {
 
   addEdge(from: number, to: number, weight: number): void {
     this.matrix[from - 1]![to - 1] = weight;
-    this.matrix[to - 1]![from - 1] = weight;  // симетрично — граф неорієнтований
+    this.matrix[to - 1]![from - 1] = weight;  // симетрично - граф неорієнтований
   }
 
   getVertexCount(): number {
@@ -24,21 +24,21 @@ export class Graph {
 
   getEdges(): Edge[] {
     const edges: Edge[] = [];
-    for (let row = 0; row < this.size; row++) {
-      for (let col = row + 1; col < this.size; col++) {  // тільки верхній трикутник — без дублів
+    for (let row = 0; row < this.size; row++) {          // проходимо по верхньому трикутнику матриці
+      for (let col = row + 1; col < this.size; col++) {  // тільки верхній трикутник - без дублів
         const weight = this.matrix[row]![col]!;
-        if (weight > 0) edges.push({ from: row + 1, to: col + 1, weight });
+        if (weight > 0) edges.push({ from: row + 1, to: col + 1, weight }); // зберігаємо ребро з 1-індексацією
       }
     }
     return edges;
   }
 
   printMatrix(): void {
-    const header = "    " + Array.from({ length: this.size }, (_, index) => String(index + 1).padStart(4)).join("");
+    const header = "    " + Array.from({ length: this.size }, (unusedValue, index) => String(index + 1).padStart(4)).join("");
     console.log(header);
     console.log("    " + "----".repeat(this.size));
     for (let row = 0; row < this.size; row++) {
-      const rowStr = this.matrix[row]!.map((cell) => String(cell).padStart(4)).join("");
+      const rowStr = this.matrix[row]!.map((cell) => String(cell).padStart(4)).join(""); // форматування для гарного виводу
       console.log(`${row + 1}  |${rowStr}`);
     }
   }

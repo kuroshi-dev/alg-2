@@ -5,9 +5,9 @@ export interface MSTResult {
   totalWeight: number;
 }
 
-export function primKruskal(graph: Graph): MSTResult {
+export function primKruskal(graph: Graph): MSTResult { //
   const vertexCount = graph.getVertexCount();
-  const color       = Array.from({ length: vertexCount + 1 }, (_, index) => index);  // кожна вершина — окремий компонент
+  const color       = Array.from({ length: vertexCount + 1 }, (unusedValue, index) => index);  // кожна вершина — окремий компонент
 
   const allEdges = graph.getEdges().sort((edgeA, edgeB) => edgeA.weight - edgeB.weight);  // сортування за вагою
 
